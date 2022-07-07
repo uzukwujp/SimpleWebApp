@@ -18,6 +18,14 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
 
+  test-env:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: "echo my name"
+          command: "echo $NAME"
+
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
